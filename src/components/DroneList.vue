@@ -27,7 +27,7 @@
                     </td>                              
                     <td>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" :style="item.battery+'%'" :aria-valuenow="item.batery">{{item.battery}}</div>
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" :style="item.battery+'%'" :aria-valuenow="item.battery"  v-b-popover.hover.top="''" :title="item.battery+'%'">{{item.battery}}</div>
                       </div> 
                     </td>
                     <td>{{item.max_speed}}<span class="mh">m/h</span></td>
@@ -67,7 +67,7 @@ export default {
             this.list=resp.data;
             console.warn(resp.data)
         })
-    },
+    },  
     methods: {
         onChangePage(pageOfItems) {
             //update page of items
