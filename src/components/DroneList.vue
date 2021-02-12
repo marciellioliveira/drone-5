@@ -27,16 +27,16 @@
                     </td>                              
                     <td>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" :style="teste + '%'" aria-valuenow="25">{{item.battery}}</div>
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="40" :style="item.battery + '%'" :aria-valuenow="item.batery">{{item.battery}}</div>
                       </div>  
                         
                         
                         
                         </td>
-                    <td>{{item.max_speed}}</td>
-                    <td>{{item.average_speed}}</td>
+                    <td>{{item.max_speed}}<span class="mh">m/h</span></td>
+                    <td>{{item.average_speed}}<span class="mh">m/h</span></td>
                     <td>{{item.fly}}</td>
-                    <td>{{item.status}}</td>
+                    <td><span class="badge badge-primary">{{item.status}} </span></td>
                 </tr>
             </tbody>
         </table>
@@ -52,10 +52,7 @@ Vue.use(VueAxios, axios)
 export default {
     name: "DroneList",
     data() {
-        return {list:undefined}
-        teste: list.battery, 
-        
-       
+        return {list:undefined}        
     },
     mounted() {
         Vue.axios.get('http://services.solucx.com.br/mock/drones')
@@ -64,6 +61,7 @@ export default {
             console.warn(resp.data)
         })
     }
+   
 }
 </script>
 
@@ -77,5 +75,8 @@ export default {
         flex-direction: column;
         align-items: start;
         margin-left: 10px;
+    }
+    .mh {
+        font-size: 13px;
     }
 </style>
