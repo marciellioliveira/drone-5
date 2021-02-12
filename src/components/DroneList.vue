@@ -27,7 +27,7 @@
                     </td>                              
                     <td>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="40" :style="item.battery + '%'" :aria-valuenow="item.batery">{{item.battery}}</div>
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" :style="item.battery + '%'" :aria-valuenow="item.batery">{{item.battery}}</div>
                       </div>  
                         
                         
