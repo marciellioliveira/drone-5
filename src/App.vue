@@ -6,6 +6,9 @@
 
 <script>
 import DroneList from './components/DroneList'
+//Array of Items to be paged
+
+
 
 export default {
   name: 'App',

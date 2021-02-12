@@ -11,8 +11,10 @@
     "axios": "^0.21.1",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "jw-vue-pagination": "^1.0.3",
     "vue": "^2.6.11",
-    "vue-axios": "^3.2.4"
+    "vue-axios": "^3.2.4",
+    "vuejs-paginate": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
