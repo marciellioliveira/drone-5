@@ -1,7 +1,36 @@
 <template>
 
     <div class="container">
-        <h1 class="text-danger">Lista de Drones</h1>         
+        <h1 class="text-danger">Lista de Drones</h1>   
+
+        <div class="row g-3 my-5 filtros">
+            <div class="col">
+                <label>Drone ID</label>
+                <input type="text" class="form-control" aria-label="Drone ID">
+            </div>
+            <div class="col">
+                <label>Name</label>
+                <input type="text" class="form-control"  aria-label="Name">
+            </div>
+            <div class="col">
+                <label>Current Fly</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col">
+                <label>Status</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
 
         <table class="table table-striped">
             <thead>
@@ -16,7 +45,7 @@
                 </tr>
              </thead>
              <tbody>  
-                <tr v-for="item in pageOfItems" v-bind:key="item.id">
+                <tr v-for="item in pageOfItems" v-bind:key="item.id" >
                     <td>{{item.id}}</td>
                     <td class="pessoa">
                         <div><img :src="item.image" /> </div>
@@ -51,13 +80,15 @@ Vue.use(VueAxios, axios)
 
 
 
+
 export default {
     name: "DroneList",
     data() {
         return {
             list:undefined,
-            pageOfItems: [],
-            pageSize: 20
+            pageOfItems: [20],
+            pageSize: 20,  
+            search: "",
           
         }        
     },
@@ -67,7 +98,7 @@ export default {
             this.list=resp.data;
             console.warn(resp.data)
         })
-    },  
+    },    
     methods: {
         onChangePage(pageOfItems) {
             //update page of items
@@ -80,6 +111,11 @@ export default {
 </script>
 
 <style scoped>
+    .filtros .col {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
     .pessoa {
         display:flex;
     }
