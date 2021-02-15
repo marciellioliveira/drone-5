@@ -69,9 +69,10 @@
             </tbody>
         </table>
 
-          <jw-pagination :items="list" @changePage="onChangePage" class="custom_pagination"></jw-pagination>
+        <jw-pagination :items="list" @changePage="onChangePage" class="custom_pagination"></jw-pagination>
         
         <hr  class="filter_table">
+
         <a href="https://marciellioliveira.com.br/">Marcielli Oliveira</a>
     </div>
 </template>
@@ -132,6 +133,7 @@ export default {
         [contenteditable].form-control:focus {
         box-shadow: none;
     }
+
 
     ::-webkit-input-placeholder { /* Edge */
         color: #cecece !important;
