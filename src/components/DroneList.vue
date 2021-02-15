@@ -35,13 +35,13 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Drone</th>
-                    <th scope="col">Customer</th>
-                    <th scope="col">Batteries</th>
-                    <th scope="col">Max Speed</th>
-                    <th scope="col">Average Speed</th>
-                    <th scope="col">Current Fly</th>
-                    <th scope="col">Status</th>
+                    <th scope="col"><a href="" v-on:click="onClickReverse()">Drone ID</a></th>
+                    <th scope="col"><a href="">Customer</a></th>
+                    <th scope="col"><a href="">Batteries</a></th>
+                    <th scope="col"><a href="">Max Speed</a></th>
+                    <th scope="col"><a href="">Average Speed</a></th>
+                    <th scope="col"><a href="">Current Fly</a></th>
+                    <th scope="col"><a href="">Status</a></th>
                 </tr>
              </thead>
              <tbody>  
@@ -79,16 +79,13 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 
-
-
 export default {
     name: "DroneList",
     data() {
         return {
             list:undefined,
-            pageOfItems: [20],
-            pageSize: 20,  
-            search: "",
+            pageOfItems: [],
+            listReverse: this.list,
           
         }        
     },
@@ -103,6 +100,9 @@ export default {
         onChangePage(pageOfItems) {
             //update page of items
             this.pageOfItems = pageOfItems;
+        },
+        onClickReverse() {
+            console.log(this.list.reverse())
         }
     },
  
@@ -111,6 +111,9 @@ export default {
 </script>
 
 <style scoped>
+    a {
+        text-decoration: none !important;
+    }
     .filtros .col {
         display: flex;
         flex-direction: column;
